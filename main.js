@@ -1,4 +1,4 @@
 $(updateView)
     function updateView() {
-        alert("using jQuery!")
+        alert("Why Hello There")
     }
