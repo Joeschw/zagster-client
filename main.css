@@ -1,6 +1,28 @@
 body {
     font-family: "HelveticaNeue", "Arial", "sans-serif";
+    background-color: black;
+    color: silver;
+    text-align: center; 
 }
 h2 {
     font-size: 2em;
 }
+#mainheader {
+    background-image: linear-gradient(-90deg, #ff6600, black);
+    margin-left: 25%;
+    margin-right: 25%;
+    height: 100px;
+    padding-bottom: 50px;
+  }
+#visual {
+    margin-left: 25%;
+    margin-right: 25%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+#info {
+    margin-left: 25%;
+    margin-right: 25%;
+    padding-top: 50px;
+    padding: 50px;
+  }
