@@ -8,25 +8,36 @@
             integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
             crossorigin="anonymous"></script>
         <script src="main.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 
     </head>
     <body>
        <div class="container" id="body">
 
         <div class="row" id="mainheader">
-            <div class="column">
+            <div id="top" class="column">
                     <h1>Zagster Bike Share in Bend</h1>
-                    <h2 id="rideCount">TODO</h2>
-                    <p1>Total rides</p1>
             </div>
             <div class="column">
                 <p1>zagster logo</p1>
             </div>
         </div>
+        <div class="container" id="middle">
+            <div id="data">
+                    <h2 id="rideCount">TODO</h2>
+                    <p1>Total rides</p1>
+            </div>
+            <div id="graph">
+                    <canvas id="myChart"></canvas>
+            </div>
+
+        </div>
        </div>
+       
        <div id="visual">
             <img src="imgs/Sketch.jpg">
        </div>
+       
        <div class="container" id="info">
            <div class="row">
                <div class="column">
@@ -36,6 +47,7 @@
                    <p1>How to navigate visual</p1>
                </div>
            </div>
-       </div>
+        </div>
+        
     </body>
 </html>
