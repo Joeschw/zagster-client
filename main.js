@@ -1,9 +1,11 @@
-$(updategraph)
+// $(updategraph)
 $(updateView)
+// $(updateView2)
     // a memory location that never changes
     // Always capitalized
     const BASE_URL = "https://zagster-service.herokuapp.com"
-    const PI = 3.14159
+    
+    var my_data17 = []
 
     // $ = JQuery command, wait until webpage is loaded and then call the function whose name is in the parantheses.
     // or use call function ...
@@ -45,48 +47,65 @@ $(updateView)
     // console.log(year_list[2][11])
     // console.log(year_list[3][12])
 
-    let years = []
-    let months2016 =[]
-    let months2017 = []
-    let months2018 = []
 
     function updateView() {
-      $.getJSON(BASE_URL + "/rides/count" , updateRideCount)
-
-      $.when ($.getJSON(BASE_URL + "/rides/count/per_month", peryear),).then(updateChart);
-    }
-
-    function perYear(data) {
       
-      for (var index = 0, month=9; index <= 3, month<=12; ++index, ++month){
-        months2016.push(data[2016] [index] [month])
-      }
-      console.log("2016 data by months is easy " + months2016)
 
-      for (var index = 0, month=9; index <= 3, month<=12; ++index, ++month){
-        months2016.push(data[2017] [index] [month])
-      }
-      console.log("2017 data by months is easy " + months2017)
+      $.when ($.getJSON(BASE_URL + "/rides/count/per_month", peryear),).then(updategraph);
+    } 
 
-      for (var index = 0, month=9; index <= 3, month<=12; ++index, ++month){
-        months2016.push(data[2018] [index] [month])
-      }
-      console.log("2018 data by months is easy " + months2018)
-    }
+    // function updateView2() {
+    //   $.getJSON(BASE_URL + "/rides/count" , updateRideCount)
+    // }
+  
+    // function updateRideCount(data) {
+    //   numberOfRides = data.count
+    //   $("h2#rideCount").html(numberOfRides)
+    //   console.log(data)
+      
+    // }
 
-
-
-
-    function updateView() {
-      $.getJSON(BASE_URL + "/rides/count" , updateRideCount)
-    }
+    // function updateView() {
+    //   $.getJSON(BASE_URL + "/rides/count" , updateRideCount)
+    // }
     
     function updateRideCount(data) {
       numberOfRides = data.count
       $("h2#rideCount").html(numberOfRides)
       console.log(numberOfRides);
     }
-    
+   
+    function peryear(data) {
+      var data2017 = data[2017]
+
+      console.log(data2017[0][1])
+      my_data17.push(data2017[0][1])
+      console.log(data2017[1][2])
+      my_data17.push(data2017[1][2])
+      console.log(data2017[2][3])
+      my_data17.push(data2017[2][3])
+      console.log(data2017[3][4])
+      my_data17.push(data2017[3][4])
+      console.log(data2017[4][5])
+      my_data17.push(data2017[4][5])
+      console.log(data2017[5][6])
+      my_data17.push(data2017[5][6])
+      console.log(data2017[6][7])
+      my_data17.push(data2017[6][7])
+      console.log(data2017[7][8])
+      my_data17.push(data2017[7][8])
+      console.log(data2017[8][9])
+      my_data17.push(data2017[8][9])
+      console.log(data2017[9][10])
+      my_data17.push(data2017[9][10])
+      console.log(data2017[10][11])
+      my_data17.push(data2017[10][11])
+      console.log(data2017[11][12])
+      my_data17.push(data2017[11][12])
+      console.log("this is my data" + my_data17)
+    }
+
+
     function updategraph() {
       var ctx = document.getElementById('myChart').getContext('2d');
       var chart = new Chart(ctx, {
@@ -95,12 +114,13 @@ $(updateView)
 
       // The data for our dataset
       data: {
-          labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+          labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
           datasets: [{
-              label: 'Rides per month',
-              backgroundColor: 'rgb(255, 99, 132)',
-              borderColor: 'rgb(255, 99, 132)',
-              data: [0, 10, 5, 2, 20, 30, 45]
+              label: 'Rides per month 2017',
+              backgroundColor: '#ff6600',
+              borderColor: '#ff6600',
+              // data: [0, 50, 100, 150, 200, 250, 300, 350, 400, 450, 451, 452]
+              data: my_data17
           }]
       },
 
